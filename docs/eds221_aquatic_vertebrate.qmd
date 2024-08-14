@@ -1,0 +1,36 @@
+---
+title: "Aquatic_vertebrate_survey"
+author: "Amanda Overbye"
+format: html
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+library(tidyverse)
+library(here)
+library(janitor)
+```
+
+```{r}
+mack_verts <- read.csv(here("data","AS00601.csv"))
+#
+mack_verts <- mack_verts |> clean_names()
+view(mack_verts)
+```
+
+
+
+```{r}
+##<- ggplot(data = mack_verts, 
+                         ##  aes(x = as.factor(), 
+##library(tidyverse)
+##ggplot(data = subset(mtcars, gear == 5 & cyl == 4),
+       ##aes(x = mpg, y = disp)) + geom_point()
+
+ggplot(data = subset(mack_verts), 
+       aes(x = "year", y = "species"))
+
+```
+
